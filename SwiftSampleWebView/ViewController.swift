@@ -36,6 +36,11 @@ class ViewController: UIViewController {
         //myWebView.reload(); // to refresh the uiwebview
         //myWebView.stopLoading(); // to stop the loading from uiwebview
         
+        //gcdExample()
+    }
+    
+    func gcdExample()
+    {
         let queue1 = DispatchQueue(label: "com.moxdroid.queue1", qos: DispatchQoS.userInitiated)
         let queue2 = DispatchQueue(label: "com.moxdroid.queue2", qos: DispatchQoS.background)
         queue1.async {
@@ -48,6 +53,32 @@ class ViewController: UIViewController {
             for i in 100..<110{
                 print("DQ2",i)
             }
+        }
+        
+        let queue3 = DispatchQueue(label: "com.moxdroid.queue3", qos: DispatchQoS.utility, attributes: .concurrent)
+        
+        queue3.sync {
+            print("Hello World - Inside sync")
+            for i in 111..<120{
+                print("DQ3 - Sync",i)
+            }
+        }
+        print("Hello World - Exit sync")
+        
+        queue3.async {
+            print("Hello World - Inside async")
+            for i in 121..<130{
+                print("DQ3 - Async",i)
+            }
+        }
+        print("Hello World - Exit async")
+        
+        DispatchQueue.main.async {
+            //let url = URL(string: "https://www.google.com")
+            //let requestObj = URLRequest(url: url!)
+            //self.myWebView.loadRequest(requestObj)
+            //self.lbltitle.text = ""
+            
         }
     }
 
