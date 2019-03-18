@@ -36,8 +36,8 @@ class ViewController: UIViewController {
         //myWebView.reload(); // to refresh the uiwebview
         //myWebView.stopLoading(); // to stop the loading from uiwebview
         
-        let queue1 = DispatchQueue(label: "com.appcoda.queue1", qos: DispatchQoS.userInitiated)
-        let queue2 = DispatchQueue(label: "com.appcoda.queue2", qos: DispatchQoS.background)
+        let queue1 = DispatchQueue(label: "com.moxdroid.queue1", qos: DispatchQoS.userInitiated)
+        let queue2 = DispatchQueue(label: "com.moxdroid.queue2", qos: DispatchQoS.background)
         queue1.async {
             for i in 1..<10{
                 print("DQ1",i)
