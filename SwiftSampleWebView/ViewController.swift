@@ -80,6 +80,10 @@ class ViewController: UIViewController {
             //self.lbltitle.text = ""
             
         }
+        
+        DispatchQueue.global().async {
+            print("Hello - I am global async")
+        }
     }
 
     
