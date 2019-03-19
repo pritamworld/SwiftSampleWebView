@@ -16,12 +16,32 @@ class WebKitViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         
         myWebKitView.navigationDelegate = self
-        //self.view = myWebKitView
-
-        let url = URL(string: "https://www.youtube.com/watch?v=xQmZSKxOYvs")
-        myWebKitView.load(URLRequest(url: url!))
-        
         myWebKitView.allowsBackForwardNavigationGestures = true
+        
+        loadFromString()
+        
+    }
+    
+    func loadFromString()
+    {
+        let htmlStr = "<h1>Hello World</h1>"
+        myWebKitView.loadHTMLString(htmlStr, baseURL: nil)
+    }
+    
+    func loadFromFile()
+    {
+        let localfilePath = Bundle.main.url(forResource: "home", withExtension: "html")
+        let myRequest = URLRequest(url: localfilePath!)
+        myWebKitView.load(myRequest)
+        
+    }
+    
+    func loadFromUrl()
+    {
+        //let url = URL(string: "https://www.youtube.com/watch?v=xQmZSKxOYvs")
+        let url = URL(string: "https://www.google.com")
+        let urlReq = URLRequest(url: url!)
+        myWebKitView.load(urlReq)
     }
     
 
