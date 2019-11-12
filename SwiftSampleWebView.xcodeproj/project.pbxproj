@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		074F36D622404AA7009BBA84 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F36D522404AA7009BBA84 /* WebKitViewController.swift */; };
+		0756C2EC22DFDB2C00BC0718 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0756C2EB22DFDB2C00BC0718 /* WebKit.framework */; };
 		287BD55D1E951EF300683B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287BD55C1E951EF300683B7D /* AppDelegate.swift */; };
-		287BD55F1E951EF300683B7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287BD55E1E951EF300683B7D /* ViewController.swift */; };
+		287BD55F1E951EF300683B7D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287BD55E1E951EF300683B7D /* WebViewController.swift */; };
 		287BD5621E951EF300683B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287BD5601E951EF300683B7D /* Main.storyboard */; };
 		287BD5641E951EF300683B7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287BD5631E951EF300683B7D /* Assets.xcassets */; };
 		287BD5671E951EF300683B7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287BD5651E951EF300683B7D /* LaunchScreen.storyboard */; };
@@ -18,9 +19,10 @@
 
 /* Begin PBXFileReference section */
 		074F36D522404AA7009BBA84 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
+		0756C2EB22DFDB2C00BC0718 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		287BD5591E951EF300683B7D /* SwiftSampleWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSampleWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287BD55C1E951EF300683B7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		287BD55E1E951EF300683B7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		287BD55E1E951EF300683B7D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		287BD5611E951EF300683B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		287BD5631E951EF300683B7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		287BD5661E951EF300683B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,17 +35,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0756C2EC22DFDB2C00BC0718 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0756C2EA22DFDB2C00BC0718 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0756C2EB22DFDB2C00BC0718 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		287BD5501E951EF300683B7D = {
 			isa = PBXGroup;
 			children = (
 				287BD55B1E951EF300683B7D /* SwiftSampleWebView */,
 				287BD55A1E951EF300683B7D /* Products */,
+				0756C2EA22DFDB2C00BC0718 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				287BD55C1E951EF300683B7D /* AppDelegate.swift */,
-				287BD55E1E951EF300683B7D /* ViewController.swift */,
+				287BD55E1E951EF300683B7D /* WebViewController.swift */,
 				287BD5601E951EF300683B7D /* Main.storyboard */,
 				287BD5631E951EF300683B7D /* Assets.xcassets */,
 				287BD5651E951EF300683B7D /* LaunchScreen.storyboard */,
@@ -112,6 +124,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -144,7 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				287BD55F1E951EF300683B7D /* ViewController.swift in Sources */,
+				287BD55F1E951EF300683B7D /* WebViewController.swift in Sources */,
 				287BD55D1E951EF300683B7D /* AppDelegate.swift in Sources */,
 				074F36D622404AA7009BBA84 /* WebKitViewController.swift in Sources */,
 			);
@@ -275,7 +288,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moxdroid.SampleWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -289,7 +302,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moxdroid.SampleWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

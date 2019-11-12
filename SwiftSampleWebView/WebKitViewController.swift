@@ -2,7 +2,7 @@
 //  WebKitViewController.swift
 //  SampleWebView
 //
-//  Created by moxDroid on 2019-03-18.
+//  Created by moxDroid on 2019-11-12.
 //  Copyright © 2019 MoxDroid. All rights reserved.
 //
 
@@ -18,13 +18,23 @@ class WebKitViewController: UIViewController, WKNavigationDelegate {
         myWebKitView.navigationDelegate = self
         myWebKitView.allowsBackForwardNavigationGestures = true
         
-        loadFromString()
+        //self.loadFromString()
+        self.loadFromUrl()
+        //self.loadFromFile()
         
     }
     
+    //
     func loadFromString()
     {
-        let htmlStr = "<h1>Hello World</h1>"
+        let htmlStr = """
+                            <h1>Hello World</h1>
+                            <h2>Hello World</h2>
+                            <h3>Hello World</h3>
+                            <h4>Hello World</h4>
+                            <h5>Hello World</h5>
+                            <h6>Hello World</h6>
+                      """
         myWebKitView.loadHTMLString(htmlStr, baseURL: nil)
     }
     
@@ -33,26 +43,39 @@ class WebKitViewController: UIViewController, WKNavigationDelegate {
         let localfilePath = Bundle.main.url(forResource: "home", withExtension: "html")
         let myRequest = URLRequest(url: localfilePath!)
         myWebKitView.load(myRequest)
+        //myWebKitView.loadFileURL(<#T##URL: URL##URL#>, allowingReadAccessTo: <#T##URL#>)
         
     }
     
     func loadFromUrl()
     {
         //let url = URL(string: "https://www.youtube.com/watch?v=xQmZSKxOYvs")
-        let url = URL(string: "https://www.google.com")
+        let url = URL(string: "https://www.lambtoncollege.ca/")
+        //let url = URL(string: "https://www.google.com")
         let urlReq = URLRequest(url: url!)
         myWebKitView.load(urlReq)
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func webBrowserAction(_ sender: UIBarButtonItem)
+    {
+        switch sender.tag {
+        case 0:
+            //myWebKitView.go(to: myWebKitView.backForwardList.item(at: 0)!)
+            myWebKitView.reloadFromOrigin()
+        case 1:
+            //myWebKitView.go(to: myWebKitView.backForwardList.forwardItem!)
+            if myWebKitView.canGoForward
+            {
+                myWebKitView.goForward()
+            }
+            
+        case 2:
+            //myWebKitView.go(to: myWebKitView.backForwardList.backItem!)
+            myWebKitView.goBack()
+        case 3:
+            myWebKitView.reload()
+        default:
+            print("NO Action")
+        }
     }
-    */
-
 }

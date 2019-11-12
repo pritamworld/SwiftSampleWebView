@@ -2,13 +2,13 @@
 //  ViewController.swift
 //  SampleWebView
 //
-//  Created by Pritesh Patel on 2017-04-05.
-//  Copyright © 2017 MoxDroid. All rights reserved.
+//  Created by Pritesh Patel on 2019-11-12.
+//  Copyright © 2019 MoxDroid. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class WebViewController: UIViewController {
 
     @IBOutlet weak var myWebView: UIWebView!
     override func viewDidLoad() {
